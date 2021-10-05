@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.LoginBut)
 
-    //      val regTextView: TextView = findViewById(R.id.RegisterUsername)
-
+//        val regTextView: TextView = findViewById(R.id.RegisterUsername)
+//
 //        val regButton: Button = findViewById(R.id.RegisterBut)
-
+//
 //        val landLoginButton: Button = findViewById(R.id.LandLoginBut)
-
+//
 //        val landTextView: TextView = findViewById(R.id.LandLoginUsername)
 
         button.setOnClickListener{
