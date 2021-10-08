@@ -10,6 +10,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_reg.*
@@ -22,5 +24,16 @@ class MainActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController: NavController = navHostFragment.navController
+
+
+        val sharedPreferences: SharedPreferences = getSharedPreferences("shared Prefs", Context.MODE_PRIVATE)
+        val savedUsername = sharedPreferences.getString("USERNAME_KEY", null)
+        val savedPassword = sharedPreferences.getString("PASSWORD_KEY", null)
+
+        if(savedUsername?.isNotEmpty() == true && savedPassword?.isNotEmpty() == true ) {
+            navController.navigate(R.id.action_loginFragment_to_menuFragment)
+        }
     }
 }
