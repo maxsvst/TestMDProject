@@ -62,7 +62,6 @@ class RegFragment : Fragment() {
         val enteredUsername: String? = view?.RegisterUsername?.text.toString()
         val enteredPassword: String? = view?.RegisterPassword?.text.toString()
         val repeatedPassword: String? = view?.RegisterSecondPassword?.text.toString()
-
         if(enteredEmail?.isNotEmpty() == true && enteredUsername?.isNotEmpty() == true && enteredPassword?.isNotEmpty() == true && repeatedPassword?.isNotEmpty() == true){
             if(isValidEmail(enteredEmail)){
                 if (enteredPassword?.length in 6..20){
