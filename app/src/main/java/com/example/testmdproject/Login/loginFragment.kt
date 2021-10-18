@@ -19,30 +19,31 @@ class LoginFragment: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
        val view = inflater.inflate(R.layout.fragment_login, container, false)
-
+        //Объявление setOnClickListener для кнопки "Логин"
         view.LoginBut.setOnClickListener {
             if(checkSharedData(view) && dataIsValid(view)) {
                 Toast.makeText(requireActivity(), "Вы успешно вошли", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_loginFragment_to_menuFragment)
             }
         }
-
+        //Объявление setOnClickListener для кнопки "Ещё нет аккаунта?"
         view.LoginToRegisterBut.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_regFragment)
         }
         return view
 
     }
+    //Функция проверки на корректность ввода логина и пароля
     private fun dataIsValid(view: View?):Boolean {
         var check: Boolean = false
 
-        val enteredUsername: String? = view?.LoginUsername?.text.toString()
-        val enteredPassword: String? = view?.LoginPassword?.text.toString()
+        val enteredUsername: String = view?.LoginUsername?.text.toString()
+        val enteredPassword: String = view?.LoginPassword?.text.toString()
 
-        if (enteredUsername?.isNotEmpty() == true && enteredPassword?.isNotEmpty() == true) {
-            if (enteredPassword?.length in 6..20) {
+        if (enteredUsername.isNotEmpty() && enteredPassword.isNotEmpty()) {
+            if (enteredPassword.length in 6..20) {
                 check = true
                 return check
             } else {
@@ -56,7 +57,7 @@ class LoginFragment: Fragment() {
             return check
         }
     }
-
+    //Проверка на совпадение введённых данных с сохранёнными для осуществления входа
     private fun checkSharedData(view: View?): Boolean {
 
         var checked: Boolean = false
