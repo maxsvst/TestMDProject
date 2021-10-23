@@ -22,16 +22,16 @@ class RegFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_reg, container, false)
-
+        //Объявление setOnClickListener для кнопки "Регистрация"
         view.RegisterBut.setOnClickListener {
             if (dataIsValid(view)) {
                 saveData(view)
                 findNavController().navigate(R.id.action_regFragment_to_loginFragment)
             }
         }
-
+        //Объявление setOnClickListener для кнопки "Уже етсь аккаунт?"
         view.RegisterToLoginBut.setOnClickListener {
             findNavController().navigate(R.id.action_regFragment_to_loginFragment)
         }
@@ -39,7 +39,7 @@ class RegFragment : Fragment() {
         return view
 
     }
-
+    //Функция сохранения данных о пользователе с помощью shared references
     private fun saveData(view: View?){
         val userEmail = view?.RegisterEmail?.text.toString()
         val userName = view?.RegisterUsername?.text.toString()
@@ -54,7 +54,7 @@ class RegFragment : Fragment() {
         }.apply()
         Toast.makeText(requireActivity(), "Регистрация прошла успешно", Toast.LENGTH_SHORT).show()
     }
-
+    //Функция проверки на корректность ввода логина и пароля
     private fun dataIsValid(view: View?):Boolean{
         var check: Boolean = false
 
@@ -62,7 +62,6 @@ class RegFragment : Fragment() {
         val enteredUsername: String? = view?.RegisterUsername?.text.toString()
         val enteredPassword: String? = view?.RegisterPassword?.text.toString()
         val repeatedPassword: String? = view?.RegisterSecondPassword?.text.toString()
-
         if(enteredEmail?.isNotEmpty() == true && enteredUsername?.isNotEmpty() == true && enteredPassword?.isNotEmpty() == true && repeatedPassword?.isNotEmpty() == true){
             if(isValidEmail(enteredEmail)){
                 if (enteredPassword?.length in 6..20){
@@ -90,7 +89,7 @@ class RegFragment : Fragment() {
             return check
         }
     }
-
+    //Функция, котрая вызывается при проверке корректности ввода имейла
     private fun isValidEmail(target: CharSequence?): Boolean {
         return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches()
     }

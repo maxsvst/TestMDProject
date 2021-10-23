@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--~-->
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,7 +27,7 @@
             android:paddingHorizontal="20dp"
             android:gravity="center_vertical"/>
     </TableRow>
-
+    <!--~-->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +41,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Введите имя пользователя"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
     </TableRow>
 
     <TableRow
@@ -55,11 +57,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Введите пароль"
             android:inputType="textPassword"
-            android:hint="Введите пароль"/>
+            tools:ignore="TouchTargetSizeCheck" />
 
     </TableRow>
-
+    <!--~-->
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -92,5 +95,5 @@
             />
 
     </TableRow>
-
+    <!--~-->
 </TableLayout>
