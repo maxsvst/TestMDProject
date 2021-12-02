@@ -1,4 +1,4 @@
-package com.example.testmdproject.Menu
+package com.example.testmdproject.menu
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,11 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.testmdproject.R
 import kotlinx.android.synthetic.main.fragment_menu.view.*
-import kotlinx.android.synthetic.main.fragment_reg.view.*
 
 
 class MenuFragment : Fragment() {
@@ -28,6 +26,10 @@ class MenuFragment : Fragment() {
             val preferences = requireActivity().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = preferences.edit()
             editor.clear().commit()
+        }
+
+        view.MenuToAlbumsBut.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_albumsFragment)
         }
 
         return view

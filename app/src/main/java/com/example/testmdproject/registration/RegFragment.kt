@@ -1,7 +1,6 @@
-package com.example.testmdproject.Registration
+package com.example.testmdproject.registration
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -12,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.testmdproject.R
-import kotlinx.android.synthetic.main.fragment_reg.*
 import kotlinx.android.synthetic.main.fragment_reg.view.*
 
 

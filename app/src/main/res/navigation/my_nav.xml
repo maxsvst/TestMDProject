@@ -7,9 +7,9 @@
     <!--~-->
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.testmdproject.LoginFragment"
+        android:name="com.example.testmdproject.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_regFragment"
             app:destination="@id/regFragment" />
@@ -20,7 +20,7 @@
     <!--~-->
     <fragment
         android:id="@+id/regFragment"
-        android:name="com.example.testmdproject.Registration.RegFragment"
+        android:name="com.example.testmdproject.registration.RegFragment"
         android:label="fragment_reg"
         tools:layout="@layout/fragment_reg" >
         <action
@@ -29,12 +29,42 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.testmdproject.Menu.MenuFragment"
+        android:name="com.example.testmdproject.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tracklistFragment"
+            app:destination="@id/tracklistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.example.testmdproject.AlbumsFragment"
+        android:label="fragment_albums"
+        tools:layout="@layout/fragment_albums" >
+        <action
+            android:id="@+id/action_albumsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_albumsFragment_to_tracklistFragment"
+            app:destination="@id/tracklistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tracklistFragment"
+        android:name="com.example.testmdproject.tracklistFragment"
+        android:label="fragment_tracklist"
+        tools:layout="@layout/fragment_tracklist" >
+        <action
+            android:id="@+id/action_tracklistFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_tracklistFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment" />
     </fragment>
     <!--~-->
 </navigation>
