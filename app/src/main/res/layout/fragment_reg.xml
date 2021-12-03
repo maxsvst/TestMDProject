@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--~-->
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Registration.RegFragment">
-
-
+    android:fillViewport="true"
+    android:background="@color/yellow"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="registration.RegFragment">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,43 +25,64 @@
             android:id="@+id/RegisterTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Регистрация"
-            android:textSize="35dp"
-            android:textColor="#000"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center_vertical"
             android:paddingHorizontal="20dp"
-            android:gravity="center_vertical"/>
+            android:text="Регистрация"
+            android:textColor="#000"
+            android:textSize="35sp" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp">
-        <!--~-->
-        <EditText
-            android:id="@+id/RegisterEmail"
+        <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Введите email"
-            android:inputType="textEmailAddress" />
-    </TableRow>
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--~-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Введите email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/RegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_corner_toggle_emaillog"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:ems="10"
+                    android:inputType="textEmailAddress">
+                    </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20dp">
 
-        <EditText
-            android:id="@+id/RegisterUsername"
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Введите имя пользователя"
-            android:inputType="textPersonName" />
+            android:hint="Введите имя пользователя">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RegisterUsername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/round_corner_toggle_emaillog"
+                android:ems="10"
+                android:inputType="textPersonName">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
     <!--~-->
     <TableRow
@@ -65,15 +90,28 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20dp">
 
-        <EditText
-            android:id="@+id/RegisterPassword"
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Придумайте пароль"/>
+            android:hint="Придумайте пароль"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RegisterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/round_corner_toggle_password"
+                android:ems="10"
+                android:inputType="textPassword">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </TableRow>
     <!--~-->
@@ -81,17 +119,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp">
 
-        <EditText
-            android:id="@+id/RegisterSecondPassword"
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
             android:hint="Повторите пароль"
-            />
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RegisterSecondPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/round_corner_toggle_password"
+                android:ems="10"
+                android:inputType="textPassword">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
     </TableRow>
     <!--~-->
     <TableRow
@@ -100,12 +150,13 @@
         android:gravity="center"
 
 
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="20dp">
 
         <Button
             android:id="@+id/RegisterBut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
             android:text="Зарегестироваться"
             android:minHeight="65dp"/>
     </TableRow>
@@ -115,20 +166,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         >
+
         <Button
             android:id="@+id/RegisterToLoginBut"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
             android:text="Уже есть аккаунт?"
             android:textColor="#000"
-            style="@style/Widget.AppCompat.Button.Borderless"
 
             />
 
     </TableRow>
     <!--~-->
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    </TableLayout>
 
-</TableLayout>
+</ScrollView>

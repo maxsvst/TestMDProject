@@ -1,18 +1,16 @@
-package com.example.testmdproject
+package com.example.testmdproject.login
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.testmdproject.R
 import kotlinx.android.synthetic.main.fragment_login.view.*
-import kotlinx.android.synthetic.main.fragment_reg.view.*
 
 class LoginFragment: Fragment() {
     override fun onCreateView(
